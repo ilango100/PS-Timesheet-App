@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'login',
-    templateUrl: 'login.html',
+    templateUrl: 'login.component.html',
 })
 
 export class Login {
