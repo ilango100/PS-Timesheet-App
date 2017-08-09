@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ps-ts',
-  template: `<h1>Hello {{name}}</h1>`,
+  templateUrl: 'timesheet.html',
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  {
+  loggedIn = false;
+}
