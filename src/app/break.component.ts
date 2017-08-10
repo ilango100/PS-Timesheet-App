@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Comment } from './comment'
 
 @Component({
     selector: 'break',
@@ -8,6 +9,19 @@ import { Component } from '@angular/core';
 export class BreakComponent {
     from:Date;
     to:Date;
-    comments:string[];
-    lastComment:string;
+    comment:string;
+
+    comments:Comment[];
+
+    add() {
+        comments.add({
+            from: this.from,
+            to: this.to,
+            comment: this.comment,
+        });
+        this.from=undefined;
+        this.to=undefined;
+        this.comment="";
+    }
+
 }
