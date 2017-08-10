@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'ps-ts',
@@ -8,20 +9,20 @@ export class AppComponent  {
   loggedIn = false;
   username: string;
 
-  loginTime: Date;
-  logoutTime: Date;
+  constructor(private appserv:AppService) {
+  }
 
   logIn(log: boolean) {
     this.loggedIn = log;
     console.log("logged",log);
     if (log) {
-      this.loginTime=new Date();
+      this.appserv.loginTime=new Date();
     }
   };
 
   logOut() {
     console.log("logged out");
-    this.logoutTime = new Date();
+    this.appserv.logoutTime = new Date();
   }
 
 }
