@@ -6,7 +6,12 @@
             <label class="input-group-addon">To</label>
             <input type="time" name="to" class="form-control" [(ngModel)]="to" />
         </div>
-        <button class="btn btn-primary">Take Break</button>
-        <button class="btn btn-default">Clear</button>
     </div>
+    <div class="input-group">
+        <label class="input-group-addon">Comment</label>
+        <input type="text" name="comment" class="form-control" [(ngModel)]="lastComment"/>
+    </div>
+    <br/>
+    <button class="btn btn-primary">Take Break</button>
+    <button class="btn btn-default">Clear</button>
 </form>
