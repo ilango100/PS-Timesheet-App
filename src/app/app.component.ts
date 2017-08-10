@@ -13,4 +13,8 @@ export class AppComponent  {
     console.log("logged",log);
   };
 
+  logOut() {
+    console.log("logged out");
+  }
+
 }
