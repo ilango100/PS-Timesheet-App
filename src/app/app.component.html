@@ -1,7 +1,18 @@
 <div *ngIf="!loggedIn" class="jumbotron">
     <login (loggedIn)="logIn($event)" ></login>
 </div>
-<!--<div *ngIf="loggedIn">
-    <breakform id="break"></breakform>
-    <details id="details"></details>
-</div>-->
+<div *ngIf="loggedIn">
+<nav class="navbar navbar-default">
+   <div class="container-fluid">
+    <div class="navbar-header">
+      <span class="navbar-brand">Timesheet</span>
+    </div>
+    <ul class="nav navbar-nav">
+      <li [class.active]="true"><a href="#">Details</a></li>
+      <li><a href="/break">Take a Break</a></li>
+    </ul>
+</div>
+</nav>
+
+
+</div>
