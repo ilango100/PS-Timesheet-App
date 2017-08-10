@@ -14,7 +14,7 @@ export class BreakComponent {
     comments:Comment[];
 
     add() {
-        comments.add({
+        this.comments.push({
             from: this.from,
             to: this.to,
             comment: this.comment,

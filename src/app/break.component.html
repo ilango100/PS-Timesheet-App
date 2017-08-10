@@ -9,9 +9,9 @@
     </div>
     <div class="input-group">
         <label class="input-group-addon">Comment</label>
-        <input type="text" name="comment" class="form-control" [(ngModel)]="lastComment"/>
+        <input type="text" name="comment" class="form-control" [(ngModel)]="comment"/>
     </div>
     <br/>
-    <button class="btn btn-primary">Take Break</button>
+    <button class="btn btn-primary" (click)="add()" >Take Break</button>
     <button class="btn btn-default">Clear</button>
 </form>
