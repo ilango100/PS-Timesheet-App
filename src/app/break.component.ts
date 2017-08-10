@@ -19,6 +19,9 @@ export class BreakComponent {
             to: this.to,
             comment: this.comment,
         });
+        this.clear();
+    }
+    clear() {
         this.from=undefined;
         this.to=undefined;
         this.comment="";
