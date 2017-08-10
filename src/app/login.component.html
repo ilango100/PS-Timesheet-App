@@ -16,7 +16,10 @@
 		<label>Password:</label><br/>
 		<input type="password" name="pass" class="form-control" [(ngModel)]="pass"/><br/>
 		</div>
-		<button class="btn" [class.btn-primary]="!wrong && !register" [class.btn-danger]="wrong" [class.btn-default]="register" (click)="submit()">Check In</button>
+		<div *ngIf="wrong" class="alert alert-danger">
+			<strong>Sorry!</strong> Wrong username/password! <a href="#" class="alert-link">Forgot password?</a>
+		</div>
+		<button class="btn" [class.btn-primary]="!register" [class.btn-default]="register" (click)="submit()">Check In</button>
 		<button class="btn" [class.btn-primary]="register" [class.btn-default]="!register" (click)="registerClicked()">Register</button>
 	</form>
 </div>

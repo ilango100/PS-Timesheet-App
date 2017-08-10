@@ -1,8 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Bootstrap files - may be updated
-/src/bootstrap
-
 # compiled output
 /dist
 /tmp
