@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   loggedIn = false;
   username: string;
+
+  logIn(log: boolean) {
+    this.loggedIn = log;
+    console.log("logged",log);
+  };
+
 }

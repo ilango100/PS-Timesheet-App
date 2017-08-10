@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class Login {
     user: string;
     pass: string;
+    @Output() loggedIn = new EventEmitter<boolean>();
 
     constructor(private http: HttpClient) {
     }
@@ -21,7 +22,7 @@ export class Login {
         },{
             responseType: 'json',
         }).subscribe(data => {
-            console.log(data);
+            this.loggedIn.emit(data['login']);
         }, err => {
             console.log(err);
         })

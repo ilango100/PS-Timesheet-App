@@ -1,5 +1,5 @@
 <div *ngIf="!loggedIn" id="login">
-    <login></login>
+    <login (loggedIn)="logIn($event)" ></login>
 </div>
 <!--<div *ngIf="loggedIn">
     <breakform id="break"></breakform>
