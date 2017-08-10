@@ -19,7 +19,7 @@ export class Login {
             user: this.user,
             pass: this.pass,
         },{
-            responseType: 'text',
+            responseType: 'json',
         }).subscribe(data => {
             console.log(data);
         }, err => {
