@@ -29,4 +29,8 @@ export class AppComponent  {
     console.log("used time",this.appserv.calcTime())
   }
 
+  exit() {
+    location.reload();
+  }
+
 }
