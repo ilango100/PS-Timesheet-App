@@ -9,7 +9,13 @@
 .jumbotron h1 {
     text-align: center;
 }
-#breakform {
+.maincont {
     width: 85%;
     margin: auto;
+}
+
+.views {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
 }
