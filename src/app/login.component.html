@@ -4,6 +4,10 @@
 			<label> Email:</label><br/>
 			<input type="email" name="email" class="form-control"><br/>
 		</div>
+		<div class="form-group" [class.hidden]="!register">
+			<label> Email:</label><br/>
+			<input type="date" name="email" class="form-control"><br/>
+		</div>
 		<div class="form-group">
 		<label>Username:</label><br/>
 		<input type="text" name="username" class="form-control" [(ngModel)]="user"/><br/>
@@ -12,8 +16,8 @@
 		<label>Password:</label><br/>
 		<input type="password" name="pass" class="form-control" [(ngModel)]="pass"/><br/>
 		</div>
-		<button (click)="submit()">Check In</button>
-		<button (click)="registerClicked()">Register</button>
+		<button class="btn" [class.btn-primary]="!wrong && !register" [class.btn-danger]="wrong" [class.btn-default]="register" (click)="submit()">Check In</button>
+		<button class="btn" [class.btn-primary]="register" [class.btn-default]="!register" (click)="registerClicked()">Register</button>
 	</form>
 </div>
 
