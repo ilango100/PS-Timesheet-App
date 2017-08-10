@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
     templateUrl: 'login.component.html',
 })
 
-export class Login {
+export class LoginComponent {
     user: string;
     pass: string;
     register = false;
