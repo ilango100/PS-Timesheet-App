@@ -23,6 +23,7 @@ export class AppComponent  {
   logOut() {
     console.log("logged out");
     this.appserv.logoutTime = new Date();
+    console.log("used time",this.appserv.calcTime())
   }
 
 }

@@ -8,4 +8,11 @@ export class AppService {
 
     public loginTime:Date;
     public logoutTime:Date;
+
+    calcTime():number {
+        let fullTime = this.logoutTime.getTime()-this.loginTime.getTime();
+        let hrs = fullTime/(1000)
+        return hrs;
+    }
+
 }
