@@ -29,3 +29,11 @@
     width: 85%;
     margin: auto;
 }
+#logout {
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    z-index: 5;
+}

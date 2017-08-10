@@ -8,6 +8,8 @@ import { AppService } from './app.service';
 export class AppComponent  {
   loggedIn = false;
   username: string;
+  logoutClicked = false;
+  workTime: number;
 
   constructor(private appserv:AppService) {
   }
@@ -21,8 +23,9 @@ export class AppComponent  {
   };
 
   logOut() {
-    console.log("logged out");
     this.appserv.logoutTime = new Date();
+    this.workTime = this.appserv.calcTime();
+    this.logoutClicked = true;
     console.log("used time",this.appserv.calcTime())
   }
 
