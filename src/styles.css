@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.login {
+    width: 40%;
+    margin: auto;
+}
+.hidden {
+    display: none;
+}
+.jumbotron h1 {
+    text-align: center;
+}

@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class Login {
     user: string;
     pass: string;
+    register = false;
     @Output() loggedIn = new EventEmitter<boolean>();
 
     constructor(private http: HttpClient) {
@@ -28,7 +29,7 @@ export class Login {
         })
     };
 
-    register() {
+    registerClicked() {
     //Register method
     };
 }
