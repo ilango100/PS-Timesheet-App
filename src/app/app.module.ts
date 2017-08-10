@@ -7,16 +7,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { LoginComponent } from './login.component';
 import { BreakComponent } from './break.component';
+import { DetailsComponent } from './details.component';
 
 const routs: Routes = [
   {
     path: '',
-    redirectTo: '/break',
+    redirectTo: '/details',
     pathMatch: 'full',
   },
   {
     path: 'break',
     component: BreakComponent,
+  },
+  {
+    path: 'details',
+    component: DetailsComponent,
   }
 ];
 
@@ -24,7 +29,7 @@ const routs: Routes = [
   imports:      [
     RouterModule.forRoot(routs),
     BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, LoginComponent, BreakComponent ],
+  declarations: [ AppComponent, LoginComponent, BreakComponent, DetailsComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
