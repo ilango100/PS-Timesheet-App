@@ -11,7 +11,7 @@ export class BreakComponent {
     to:Date;
     comment:string;
 
-    comments:Comment[];
+    comments:Comment[] =[];
 
     add() {
         this.comments.push({
