@@ -14,8 +14,14 @@
     margin: auto;
 }
 
-.views {
+#week {
     width: 50%;
-    height: 100%;
-    display: inline-block;
+    position: absolute;
+    right: 0px;
+}
+
+#month {
+    width: 50%;
+    position: absolute;
+    left: 0px;
 }
