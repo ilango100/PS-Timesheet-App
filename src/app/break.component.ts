@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Comment } from './comment'
+import { AppService } from './app.service';
 
 @Component({
     selector: 'break',
@@ -11,14 +12,16 @@ export class BreakComponent {
     to:Date;
     comment:string;
 
-    comments:Comment[] =[];
+    constructor(private appserv:AppService) {
+    }
 
     add() {
-        this.comments.push({
+        let com:Comment = {
             from: this.from,
             to: this.to,
             comment: this.comment,
-        });
+        };
+        this.appserv.comments.push(com);
         this.clear();
     }
     clear() {
