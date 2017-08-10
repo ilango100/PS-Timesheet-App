@@ -1,4 +1,5 @@
 <div id="form" class="login">
+    <h1>Timesheet <span *ngIf="!register">login</span><span *ngIf="register">register</span> </h1>
 	<form id="login">
 		<div class="form-group" [class.hidden]="!register">
 			<label> Email:</label><br/>
@@ -8,11 +9,11 @@
 			<label> Email:</label><br/>
 			<input type="date" name="email" class="form-control"><br/>
 		</div>
-		<div class="form-group">
+		<div class="form-group" [class.has-error]="wrong">
 		<label>Username:</label><br/>
 		<input type="text" name="username" class="form-control" [(ngModel)]="user"/><br/>
 		</div>
-		<div class="form-group">
+		<div class="form-group" [class.has-error]="wrong">
 		<label>Password:</label><br/>
 		<input type="password" name="pass" class="form-control" [(ngModel)]="pass"/><br/>
 		</div>
