@@ -2,9 +2,11 @@
     <div class="form-group">
         <div class="input-group">
             <label class="input-group-addon">From</label>
-            <input type="time" name="from" class="form-control"/>
+            <input type="time" name="from" class="form-control" [(ngModel)]="from" />
             <label class="input-group-addon">To</label>
-            <input type="time" name="to" class="form-control"/>
+            <input type="time" name="to" class="form-control" [(ngModel)]="to" />
         </div>
+        <button class="btn btn-primary">Take Break</button>
+        <button class="btn btn-default">Clear</button>
     </div>
 </form>
