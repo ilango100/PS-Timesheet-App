@@ -3,11 +3,11 @@
 	<form id="login">
 		<div class="form-group" [class.hidden]="!register">
 			<label> Email:</label><br/>
-			<input type="email" name="email" class="form-control"><br/>
+			<input type="email" name="email" class="form-control" [(ngModel)]="email" ><br/>
 		</div>
 		<div class="form-group" [class.hidden]="!register">
 			<label> Date of Birth:</label><br/>
-			<input type="date" name="email" class="form-control"><br/>
+			<input type="date" name="email" class="form-control" [(ngModel)]="dob" ><br/>
 		</div>
 		<div class="form-group" [class.has-error]="wrong">
 		<label>Username:</label><br/>

@@ -9,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
     user: string;
     pass: string;
+    dob: Date;
+    email: string;
+
     register = false;
     wrong = false;
     @Output() loggedIn = new EventEmitter<boolean>();
