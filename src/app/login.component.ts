@@ -13,7 +13,10 @@ export class LoginComponent {
     email: string;
 
     register = false;
-    wrong = false;
+    userExists = false;
+    passWrong = false;
+    emailWrong = false;
+    emailExists = false;
     @Output() loggedIn = new EventEmitter<boolean>();
 
     constructor(private http: HttpClient) {
@@ -28,7 +31,7 @@ export class LoginComponent {
             responseType: 'json',
         }).subscribe(data => {
             this.loggedIn.emit(data['login']);
-            this.wrong = !data['login'];
+            this.passWrong = !data['login'];
         }, err => {
             console.log(err);
         })
