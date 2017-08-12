@@ -24,6 +24,10 @@ export class LoginComponent {
     }
 
     submit() {
+        this.userExists = false;
+        this.passWrong = false;
+        this.emailExists = false;
+        this.emailWrong = false;
         //Send user pass data
         this.http.post('/login',{
             user: this.user,
@@ -63,7 +67,7 @@ export class LoginComponent {
                     default:
                         this.smErr = true;
                 }
-                    console.log(data['error'])
+                    console.log(data)
             }
         })
     } else {

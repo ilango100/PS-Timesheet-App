@@ -19,6 +19,9 @@
 		<label>Username:</label><br/>
 		<input type="text" name="username" class="form-control" [(ngModel)]="user"/><br/>
 		</div>
+		<div *ngIf="userExists" class="alert alert-danger">
+			<strong>Username</strong> already exists! <a href="#" class="alert-link">Forgot password?</a>
+		</div>
 		<div class="form-group" [class.has-error]="passWrong">
 		<label>Password:</label><br/>
 		<input type="password" name="pass" class="form-control" [(ngModel)]="pass"/><br/>
