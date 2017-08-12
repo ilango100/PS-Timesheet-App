@@ -1,9 +1,17 @@
 <div id="form" class="login">
     <h1>Timesheet <span *ngIf="!register">login</span><span *ngIf="register">register</span> </h1>
 	<form id="login">
-		<div class="form-group" [class.hidden]="!register">
+		<div class="form-group" [class.hidden]="!register" [class.has-error]="emailWrong || emailExists">
 			<label> Email:</label><br/>
 			<input type="email" name="email" class="form-control" [(ngModel)]="email" ><br/>
+		</div>
+		<div *ngIf="emailExists" class="alert alert-danger alert-dismissable">
+			User id with <strong>{{email}}</strong> already exists!
+			<button class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div *ngIf="emailWrong" class="alert alert-danger alert-dismissable">
+			<strong>{{email}}</strong> is not a valid email.
+			<button class="close" data-dismiss="alert">&times;</button>
 		</div>
 		<div class="form-group" [class.hidden]="!register">
 			<label> Date of Birth:</label><br/>
