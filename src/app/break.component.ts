@@ -12,7 +12,7 @@ export class BreakComponent {
     to:Date;
     comment:string;
 
-    constructor(private appserv:AppService) {
+    constructor(public appserv:AppService) {
     }
 
     add() {

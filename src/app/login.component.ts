@@ -63,10 +63,11 @@ export class LoginComponent {
                     default:
                         this.smErr = true;
                 }
+                    console.log(data['error'])
             }
         })
     } else {
-        this.register = !this.register;
+        this.register = true;
     }
     };
 }
