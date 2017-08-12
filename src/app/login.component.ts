@@ -17,6 +17,7 @@ export class LoginComponent {
     passWrong = false;
     emailWrong = false;
     emailExists = false;
+    smErr = false;
     @Output() loggedIn = new EventEmitter<boolean>();
 
     constructor(private http: HttpClient) {
@@ -47,6 +48,22 @@ export class LoginComponent {
             email: this.email,
         },{
             responseType: 'json',
+        }).subscribe(data => {
+            if (data['register']) {
+                this.loggedIn.emit(true)
+            } else {
+                let err = data['error']
+                switch(err) {
+                    case 'email':
+                        this.emailExists = true;
+                        break;
+                    case 'user':
+                        this.userExists = true;
+                        break;
+                    default:
+                        this.smErr = true;
+                }
+            }
         })
     } else {
         this.register = !this.register;
