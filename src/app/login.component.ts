@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
     user: string;
     pass: string;
-    dob: Date;
+    dob: string = "";
     email: string;
 
     register = false;
