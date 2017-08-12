@@ -33,7 +33,18 @@ export class LoginComponent {
 
     registerClicked() {
     //Register method
-    this.register = !this.register;
+    if (this.register) {
+        this.http.post('/register',{
+            user: this.user,
+            pass: this.pass,
+            dob: this.dob,
+            email: this.email,
+        },{
+            responseType: 'json',
+        })
+    } else {
+        this.register = !this.register;
+    }
     };
 }
 
