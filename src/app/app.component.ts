@@ -23,10 +23,14 @@ export class AppComponent  {
   };
 
   logOut() {
+    if (this.logoutClicked) {
+
+    } else {
     this.appserv.logoutTime = new Date();
     this.workTime = this.appserv.calcTime();
     this.logoutClicked = true;
     console.log("used time",this.appserv.calcTime())
+    }
   }
 
   exit() {

@@ -11,7 +11,17 @@ export class AppService {
 
     calcTime():number {
         let fullTime = this.logoutTime.getTime()-this.loginTime.getTime();
-        let hrs = fullTime/(1000)
+        let len = this.comments.length
+        let breaktime = 0
+        for (let i=0;i<len; i++) {
+            let br = this.comments[i].to.getTime() - this.comments[i].from.getTime()
+            if (br > 0)
+                breaktime += br
+        }
+        let msecs = fullTime - breaktime
+        let hrs = msecs/(1000*60*60)
+        if (hrs < 0)
+            hrs = 0
         return hrs;
     }
 
