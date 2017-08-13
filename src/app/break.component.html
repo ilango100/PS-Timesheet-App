@@ -27,8 +27,8 @@
             <th>Comment</th>
         </tr>
         <tr *ngFor="let comment of appserv.comments">
-            <td>{{comment.from}}</td>
-            <td>{{comment.to}}</td>
+            <td>{{comment.from.toTimeString()}}</td>
+            <td>{{comment.to.toTimeString()}}</td>
             <td>{{comment.comment}}</td>
         </tr>
     </table>
