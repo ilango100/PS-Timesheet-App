@@ -8,25 +8,33 @@ import { AppService } from './app.service';
 })
 
 export class BreakComponent {
-    from:Date;
-    to:Date;
+    from:string;
+    to:string;
     comment:string;
 
     constructor(public appserv:AppService) {
     }
 
     add() {
+        if (this.from == "" || this.to == "" || this.from == undefined || this.to == undefined)
+            return;
+        console.log(this.from+" "+this.to+" parsing")
+        let f = new Date(new Date().toDateString()+" "+this.from)
+        let t = new Date(new Date().toDateString()+" "+this.to)
+        console.log(f+" "+t+" "+this.comment)
+        if (t.getTime() <= f.getTime())
+            return;
         let com:Comment = {
-            from: this.from,
-            to: this.to,
+            from: f,
+            to: t,
             comment: this.comment,
         };
         this.appserv.comments.push(com);
         this.clear();
     }
     clear() {
-        this.from=undefined;
-        this.to=undefined;
+        this.from=""
+        this.to=""
         this.comment="";
     }
 
